@@ -22,13 +22,6 @@
     </div>
 
     <div class="form-group row">
-      <label for="balls" class="col-sm-2 col-form-label">Number of balls</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="balls" min="0">
-      </div>
-    </div>
-
-    <div class="form-group row">
       <div class="offset-sm-2 col-sm-10">
         <button type="submit" class="btn btn-primary">Play</button>
         <button type="button" class="btn btn-default" (click)="end()">Stop</button>
@@ -39,9 +32,18 @@
 </div>
 
 <div class="row">
-  <div class="col-md-2" *ngFor="let value of status.status">
-    <span *ngIf="value">Full</span>
-    <span *ngIf="!value">Empty</span>
+  <div class="col-md-2">
+
+    <svg height="800" width="1200">
+      <circle id="ball1" class="ball empty" cx="200" cy="120" r="100"/>
+      <circle id="ball2" class="ball empty" cx="600" cy="120" r="100"/>
+      <circle id="ball3" class="ball empty" cx="1000" cy="120" r="100"/>
+
+      <circle id="ball4" class="ball empty" cx="400" cy="340" r="100"/>
+      <circle id="ball5" class="ball empty" cx="800" cy="340" r="100"/>
+
+      <circle id="ball6" class="ball empty" cx="600" cy="560" r="100"/>
+    </svg>
   </div>
 </div>
 

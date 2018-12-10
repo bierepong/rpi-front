@@ -6,12 +6,11 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpResponse,
 } from '@angular/common/http';
 
 import 'rxjs/add/operator/do';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

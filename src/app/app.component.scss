@@ -1,0 +1,13 @@
+.ball {
+    stroke: #333;
+    stroke-width: 2px;
+
+    &.empty {
+        fill: #aa0000;
+    }
+    
+    &.full {
+        fill: #00aa00;
+    }
+}
+

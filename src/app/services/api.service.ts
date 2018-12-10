@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs/Observable';
-import { map } from 'lodash';
+import { Observable } from 'rxjs/Rx';
 import { Game } from '../models/game';
 import { Status } from '../models/status';
 import 'rxjs/add/operator/map';

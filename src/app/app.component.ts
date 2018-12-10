@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Status } from './models/status';
 import 'rxjs/add/observable/timer';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ export class AppComponent implements OnDestroy, OnInit {
   ) {}
 
   start() {
+    this.game = new Game();
     this.apiService.begin(this.game).subscribe();
   }
 
@@ -35,6 +37,7 @@ export class AppComponent implements OnDestroy, OnInit {
     this.gamePoller = Observable.timer(1000, 1000).subscribe(() => {
       this.apiService.status().subscribe((status) => {
         this.status = status;
+        this.status.display();
       });
     });
   }
