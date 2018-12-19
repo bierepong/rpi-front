@@ -2,18 +2,11 @@ import * as _ from 'lodash';
 
 export class Status {
 
-    public username: string;
-    public email: string;
-    public balls = 6;
-    public uuid: string;
     public status: boolean[] = [];
 
     constructor(data?: any) {
-        _.extend(this, data);
-
-        if (!data.status) {
-            data.status = Array.apply(null, {length: this.balls}).map(Boolean.call, Boolean);
-        }
+        this.status = (data && data.status) ?
+            data.status.map((value: number) => value > 200) : Array.apply(null, {length: 6}).map(() => false);
     }
 
     toggle(num, value) {

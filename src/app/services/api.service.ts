@@ -20,8 +20,8 @@ export class ApiService {
         return this.http.post<any>('/api/begin', game);
     }
 
-    end(): Observable<any> {
-        return this.http.post<any>('/api/end', null);
+    end(game: Game): Observable<any> {
+        return this.http.post<any>('/api/end', game);
     }
 
     status(): Observable<Status> {
